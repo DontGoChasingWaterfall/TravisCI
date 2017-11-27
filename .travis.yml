@@ -1,10 +1,13 @@
 language: bash
 
-script:
-  - bash build.sh
-deploy:
-  provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  file: "bash_agile.sh"
-  on:
-    tags: true
+jobs:
+  include:
+    - script: bash test.sh
+    - stage: deploy
+      script: skip
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        file: "bash_agile.sh"
+        on:
+          tags: true
