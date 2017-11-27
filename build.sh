@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_output="$(sh ./bash_agile.sh)"
+script_output="$(bash ./bash_agile.sh)"
 regex="^$(whoami): [0-9]{4}-[0-9]{2}-[0-9]{2}\$"
 if [[ !$script_output =~ $regex ]]; then
     echo "Build Success: Program gave expected output."
