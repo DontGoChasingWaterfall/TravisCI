@@ -1,4 +1,11 @@
 language: bash
 
 script:
-    - bash build.sh
+	- bash build.sh
+deploy:
+	provider: releases
+	api_key:
+		secure: "SNiDNQLwAuirYF8RlU/rjmkVrsqTNOE3admFKBiNAa4TdGhygEWGissqO/pQE40F0GTbhpBBCHkTh4sJ35CtY0/Iz/4hEIbD0MJpFAdANt9mVXaoQp85P4dFoyj8j557Cob+JLpP+blBAzKQ2pC8p3DdIoRlUTyrxZVMly1pbtBiRnhtD2Qlgbmwg4fuGU9CgzPsSGS433mAPmyJXPuJRo3PIoDGiQDZOXLNZFriItc5UMGvDlID6nZ+6gqYdAHWd/CufChLglV6NQ5mgixSQVgHyglYCGj1kkNp1t0T5D0vRmJvbmvQzStZp2WMyxpDLDxANFYd9LGM8xiYVKistsZcFrl9QuUA1AMsE+jc7pHAkiO5uLbyheOp1fVdSWEtTVgp6pu3Qc/IPFTAcL++FQokQJgnXO42Lb1kZNZBpzHsGamlX6GjP3vcmqOtg74UFZVDmKzzwU7ke+atmfvL7tzg39M16oncrU07jc/L9P+QaAn97bm32sb/9+VvZ1zffpzTNe2gMM+1SmNR3sXTFOqMoWS1ixYMx/jVwvVMH/lc6RWn3OaXpwnuhW7DfTVuViZsMVCxm89K9D9XlFJ8K6oMMHBiULsw4VgsptnX2ozpCPz+ER5nIHJlEDSXhsxhN11qsMXW9Fb/g2JQwiej8rr2xOyrMObG/XD0RDzf8o0="
+	file: "bash_agile.sh"
+	on:
+		tags: true
